@@ -46,8 +46,9 @@ int main() {
 
     double avgDist = findAverageDistanceBetweenPoints(aap, true);
     double scaleFactor = sizeOfMarker / avgDist;
-    std::cout << "avergae distance =  " << avgDist << std::endl;
-    std::cout << "scale factor (put pointcloud in cm) = " << scaleFactor << std::endl;    scaleModel(scaleFactor, reconstructionPath);
+    std::cout << "average length marker side =  " << avgDist << std::endl;
+    std::cout << "scale factor (put pointcloud in cm) = " << scaleFactor << std::endl;    
+    scaleModel(scaleFactor, reconstructionPath);
 
 
 

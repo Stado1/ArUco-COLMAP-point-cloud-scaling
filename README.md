@@ -46,7 +46,7 @@ In this average some outliers are taken into account, which make the scale facto
 
 Since the real side length is known the scale factor can be calculated. This scale factor is used scale the pointcloud, which is stored in a folder named: "model_scaled".
 
-<img src="codePipeline.png" alt="Logo" width="500">
+<img src="figures/codePipeline.png" alt="Logo" width="500">
 
 
 
@@ -62,19 +62,19 @@ I will use the COLMAP gui to find the ID of the points I am measuring and then u
 ### Setup 1
 A desk with 2 markers. Everything is laid flat on the desk.
 
-<img src="setupDesk.png" alt="Logo" width="500">
+<img src="figures/setupDesk.png" alt="Logo" width="500">
 
 
 ### Setup 2
 A kitchen with 2 measurement points and an ArUco on the floor and 2 ArUco markers on the wall.
 
-<img src="setupKitchen.png" alt="Logo" width="500">
+<img src="figures/setupKitchen.png" alt="Logo" width="500">
 
 
 ### Setup 3
 A garage where the measurement points are placed on a wall and 3 ArUco markers are placed on the floor.
 
-<img src="setupGarage.png" alt="Logo" width="500">
+<img src="figures/setupGarage.png" alt="Logo" width="500">
 
 
 

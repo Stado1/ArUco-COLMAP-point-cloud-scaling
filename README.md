@@ -86,6 +86,7 @@ The following table has the measurement accuracy for the three different environ
 | **Setup 2** | 1.5 m | 1.5424 m | 2.83% |
 | **Setup 3** | 0.9 m | 0.9164 m | 1.82% |
 
+From this it can be seen that the average relative error is: **2.10%**.
 
 
 

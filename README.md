@@ -24,8 +24,7 @@ ADD EXAMPLE VIDEO
 
 
 
-
-## SCENE DESCRIPTION AND DATA COLLECTION
+## Scene description and data collection
 This project was made with markers of size 0.099x0.099 meter. It can also work with larger and smaller markers. In order for the COLMAP to make a good pointcloud there needs to be a lot of details in the environment.
 Make sure that the markers are clearly visible in multiple images. Not every marker has to be in every image, but make sure that each individual marker is clearly visible in at least 3 images.
 Also make sure to add some closeup images of each individual marker. The pointcloud of the ArUco markers needs to be very detailed in order for the scalefactor to be accurate.
@@ -33,7 +32,7 @@ Also make sure to add some closeup images of each individual marker. The pointcl
 
 
 
-## HOW THE CODE WORKS
+## How the code works
 So once the COLMAP pointcloud has been made the following will be done:
 
 The code loops through all the images and looks for the ArUco markers. It stores for each marker the data in a struct. The data that is stored is: the id of the marker, the name of the image file and the coordinates of the corners of the marker.
@@ -54,20 +53,21 @@ Since the real side length is known the scale factor can be calculated. This sca
 
 
 
-## RESULTS
+
+## Results
 To measure how accurate the pointcloud is, 3 setups will be used. In each setup there will be 2 points of which the exact distance is known. The accuracy defined using error margin. the relative error in each setup will be calculated as: ( measured_distance / actual_distance ) / actual_distance.
 The objects used to measure the distance of, are points on pieces of paper. These points have a circumference of about 1 to 2 mm. This is big enough to affect the error margin of a small distance, so the points will be placed pretty far away from each other (about 1 meter).
 I will use the COLMAP gui to find the ID of the points I am measuring and then use the python code: "distancePointsByID.py" to find the scaled distance.
 
-### SETUP 1
+### Setup 1
 A desk with 2 markers. Everything is laid flat on the desk.
 <img src="setupDesk.png" alt="Logo" width="500">
 
-### SETUP 2
+### Setup 2
 A kitchen with 2 measurement points and a ArUco on the floor and 2 ArUco markers on the wall.
 <img src="setupKitchen.png" alt="Logo" width="500">
 
-### SETUP 3
+### Setup 3
 A garage where the measurement points are placed on a wall and 3 ArUco markers are placed on the floor.
 <img src="setupGarage.png" alt="Logo" width="500">
 

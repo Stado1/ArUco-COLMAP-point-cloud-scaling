@@ -12,7 +12,7 @@ libraries/frameworks:
 
 
 1. In main.cpp change the variable "sizeOfMarker" to the length of the sides of the marker in meters.
-2. Compile the code, in the project folder: "cmake --build build/"
+2. Compile the code using the CMakeLists.txt.
 3. After having run a COLMAP reconstruction, copy the "sparse" folder into the project folder.
 4. Add the images that were used for the reconstrution to the folder: "images", the images have to be .JPG, .jpg or .png. Make sure only images are in this folder.
 5. Run the C++ code by: "./build/my_app"

@@ -2,18 +2,18 @@
 Automated Metric Scaling for 3D Point Clouds made with COLMAP.
 
 ## Project overview
-The goal of this project is to accuratly scale a COLMAP pointcloud using DICT_4X4_50 ArUco markers. The scene that is photographed should have one or multiple markers with the same size in it, with a known size. These markers will be used to scale the pointcloud.
+The goal of this project is to accurately scale a COLMAP pointcloud using DICT_4X4_50 ArUco markers. The scene that is photographed should have one or multiple markers with the same size in it, with a known size. These markers will be used to scale the point cloud.
 
 ### How to run:
 libraries/frameworks:
 - it was made on Ubuntu 24.04
-- COLMAP, it needs to be compiled from scratch to acces the COLMAP libraries
+- COLMAP, it needs to be compiled from scratch to access the COLMAP libraries
 - OpenCV 4.6.0
 
 
 1. In main.cpp change the variable "sizeOfMarker" to the length of the sides of the marker in meters.
 2. Compile the code, in the project folder: "cmake --build build/"
-3. After having run a COLMAP reconstrution, copy the "sparse" folder into the project folder.
+3. After having run a COLMAP reconstruction, copy the "sparse" folder into the project folder.
 4. Add the images that were used for the reconstrution to the folder: "images", the images have to be .JPG, .jpg or .png. Make sure only images are in this folder.
 5. Run the C++ code by: "./build/my_app"
 6. The scaled pointcloud is now stored in the "model_scaled" folder.
@@ -25,9 +25,9 @@ ADD EXAMPLE VIDEO
 
 
 ## Scene description and data collection
-This project was made with markers of size 0.099x0.099 meter. It can also work with larger and smaller markers. In order for the COLMAP to make a good pointcloud there needs to be a lot of details in the environment.
+This project was made with markers of size 0.099x0.099 meter. It can also work with larger and smaller markers. In order for the COLMAP to make a good point cloud there needs to be a lot of details in the environment.
 Make sure that the markers are clearly visible in multiple images. Not every marker has to be in every image, but make sure that each individual marker is clearly visible in at least 3 images.
-Also make sure to add some closeup images of each individual marker. The pointcloud of the ArUco markers needs to be very detailed in order for the scalefactor to be accurate.
+Also make sure to add some closeup images of each individual marker. The point cloud of the ArUco markers needs to be very detailed in order for the scalefactor to be accurate.
 
 
 
@@ -41,8 +41,8 @@ Parallel processing is used to speed up this process.
 The code will then loop through the data in the struct to find the 3d coordinates for each corner for each detected marker in each image. So each marker will be assigned multiple sets of 3d coordinates, using each image that was used to detect it.
 It does this by putting the 3d pointcloud points onto the image and looking which of these points is the closest to each corner of each marker. The 3d point that is closest is then stored in the struct.
 
-Then for each marker in each image, the lenth of all the sides of each marker is calculated using the 3d coordinates that are projected onto that image. The average side length will be calculated using the closest 3d points. This is the average side length of the unscaled pointcloud.
-In this average some outliers are taken into account, which make the scale factor less accurate. To deal with this, forst the average with the outliers is calculated then the outliers are filtered out by removing every measurement that deviates more than 30% from the average. Then the average is calculated without the outliers.
+Then for each marker in each image, the length of all the sides of each marker is calculated using the 3d coordinates that are projected onto that image. The average side length will be calculated using the closest 3d points. This is the average side length of the unscaled pointcloud.
+In this average some outliers are taken into account, which make the scale factor less accurate. To deal with this, first the average with the outliers is calculated then the outliers are filtered out by removing every measurement that deviates more than 30% from the average. Then the average is calculated without the outliers.
 
 Since the real side length is known the scale factor can be calculated. This scale factor is used scale the pointcloud, which is stored in a folder named: "model_scaled".
 
@@ -55,8 +55,8 @@ Since the real side length is known the scale factor can be calculated. This sca
 
 
 ## Results
-To measure how accurate the pointcloud is, 3 setups will be used. In each setup there will be 2 points of which the exact distance is known. The accuracy defined using error margin. the relative error in each setup will be calculated as: ( measured_distance / actual_distance ) / actual_distance.
-The objects used to measure the distance of, are points on pieces of paper. These points have a circumference of about 1 to 2 mm. This is big enough to affect the error margin of a small distance, so the points will be placed pretty far away from each other (about 1 meter).
+To measure how accurate the pointcloud is, 3 setups will be used. In each setup there will be 2 points of which the exact distance is known. The accuracy is defined using an error margin. The relative error in each setup will be calculated as: ( measured_distance / actual_distance ) / actual_distance.
+The objects used to measure the distance of, are points on pieces of paper. These points have a circumference of about 1 to 2 mm. This is big enough to affect the error margin of a small distance, so the points will be placed pretty far away from each other (about 1 meter). But because the points are very small because of that. I added a red arrow in the images pointing at the measurement points. 
 I will use the COLMAP gui to find the ID of the points I am measuring and then use the python code: "distancePointsByID.py" to find the scaled distance.
 
 ### Setup 1
@@ -66,7 +66,7 @@ A desk with 2 markers. Everything is laid flat on the desk.
 
 
 ### Setup 2
-A kitchen with 2 measurement points and a ArUco on the floor and 2 ArUco markers on the wall.
+A kitchen with 2 measurement points and an ArUco on the floor and 2 ArUco markers on the wall.
 
 <img src="setupKitchen.png" alt="Logo" width="500">
 

@@ -91,6 +91,7 @@ From this it can be seen that the average relative error is: **2.10%**.
 
 
 ## FUTURE IMPROVEMENTS
-
+So one of the reasons why the scaling factor might be a bit off is because COLMAP does not put any 3d points exactly on the corner of each marker. The points around the corners are taken and averaged but this does not lead to the exact corner coordinates. Therefore the side lengths are not exact and thus the scalefactor is off.
+One way this can be improved is with Ray-Plane intersection. The 3d points around the corner are used to create a plane and then by looking at the pixel in the image at the marker corner an exact coordinate can be found. This can be used to create more accurate side lengths and thus a more accurate scale factor.
 
 

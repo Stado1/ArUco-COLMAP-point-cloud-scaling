@@ -1,5 +1,4 @@
 # ArUco-COLMAP-point-cloud-scaling
-Automated Metric Scaling for COLMAP 3D Point Clouds using ArUco markers.
 
 ## Project overview
 The goal of this project is to accurately scale a COLMAP pointcloud using DICT_4X4_50 ArUco markers. The scene that is photographed should have one or multiple markers with the same size in it, with a known size. These markers will be used to scale the point cloud.

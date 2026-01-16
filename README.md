@@ -17,7 +17,12 @@ libraries/frameworks:
 5. Run the C++ code by: "./build/my_app"
 6. The scaled pointcloud is now stored in the "model_scaled" folder.
 
-Here is an example video of how to run the code: https://youtu.be/llyxr1zHE1o 
+Here is an example video of how to run the code: https://youtu.be/llyxr1zHE1o  
+
+The files used in this example can be downloaded from: 
+ - sparse folder: https://drive.google.com/drive/folders/1Xu-BLtAVY9c_UaL4WIU9CeqRxYVQG-I2?usp=drive_link
+ - images folder: https://drive.google.com/file/d/1mR5nKpl7PMYcQFD9fyCkJ6RhG47MTi5O/view?usp=drive_link
+
 In this video the COLMAP point cloud is already made, just the scaling with the code is shown.
 
 
